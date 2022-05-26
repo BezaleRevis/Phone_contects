@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-size: 1.2rem;
+}
+
+body {
+  display: flex;
+  background-color: rgb(80, 163, 136);
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #708090;
+  width: 100%;
+}
+
+.h1-header {
+  /* width: 50%; */
+  /* background-color: #708090; */
+  font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 0.8em;
+  text-shadow: 2px 2px rgb(192, 71, 71);
+}
+
+.add {
+  border: none;
+  cursor: pointer;
+  /* font-size: 2em; */
+}
+
+.iconAdd {
+  padding: 0.3em;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5ex lightblue, 0 0 20px;
+  background-color: none !important;
+  flex-direction: column;
+}
+
+.mainContainer {
+  width: 50% !important;
+}
+
+.search-add {
+  margin: 0.2em;
+  margin-left: 0;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.tdName {
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  background-color: white;
+  padding: 0.5em;
+}
+
+.div_image_name {
+  display: flex;
+}
+
+.spanNane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listEmpty {
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+  color: rgb(12, 2, 2);
+  font-size: 2em;
+}
+
+.edit {
+  cursor: pointer;
+}
+
+.info-txt {
+  display: flex;
+  padding: 0.4em;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(22, 65, 66);
+  background-color: cornsilk;
+}
+
+.td {
+  display: flex;
+  background-color: #708090;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px rgb(180, 153, 153);
+  /* padding: 0.2em 0.2em 0.2em 0; */
+}
+
+.td:hover {
+  background-color: #eee;
+}
+
+.divGender {
+  visibility: hidden;
+  width: 100%;
+  border: solid 3px red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-style: italic;
+}
+
+.gender {
+  float: left;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  width: 120px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  background: #fff;
+  position: relative;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.label-gender {
+  color: rgb(39, 29, 49);
+  font-style: oblique;
+}
+
+.edit,
+.deleteButton {
+  display: flex;
+  justify-content: center;
+}
+
+.deleteButton {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.div_edit_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+#editH2 {
+  color: rgb(0, 0, 248);
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 2px 2px #946e6e;
+}
+
+.div-input-form {
+  padding-bottom: 0.1em;
+}
+
+.label-input-form {
+  float: left;
+}
+
+label {
+  margin-bottom: 0 !important;
+}
+
+.update-select {
+  padding: 0.3em;
+  width: 100%;
+  border-radius: 10px;
+  /* margin-top: 0.2em; */
+}
+
+.div-confirm {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: flex-end;
+  /* margin: 1em; */
+  margin-bottom: 0.3em;
+}
+
+.btn-confirm {
+  margin-left: 1em;
+}
+
+.inner-confirm {
+  background-color: #eee;
+  width: 50%;
+}
+.div-close{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.close-x-confirm{
+  cursor: pointer;
+}
+.btn-not-confirm{
+  padding-left: 1em;
+}
+.success-edit{
+  /* stylyng the text if edit text secseded */
+  visibility: hidden;
+  /* padding: 0; */
+}
+
+@media (max-width: 600px) {
+
+  /* For small screen: */
+  header {
+    flex-direction: column;
+  }
+
+  .inner-confirm {
+    width: 90%;
+  }
+
+  .div_edit_info {
+    display: flex;
+    flex-direction: column;
+    width: 2em;
+  }
+
+  .mainContainer {
+    width: 100% !important;
+  }
+
+  .footer {
+    height: auto;
+  }
+
+  .footer .footer-content {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}

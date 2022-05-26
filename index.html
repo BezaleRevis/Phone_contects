@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Phone Book</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- JS dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="moudle" defer src="js//addNewContect.js"></script>
+    <!-- <script type="module" defer src="js/deleteContect.js"></script> -->
+    <script type="module" defer src="js/index.js"></script>
+    <script type="module" defer src="./js/functions/editContect.js"></script>
+    <script type="module" defer src="./js/functions/deleteContect.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="div-head">
+        <h1 class="h1-header">My Professional phone book</h1>
+      </div>
+    </header>
+    <main>
+      <div class="container mainContainer">
+        <div class="search-add">
+          <input
+            class="input-group-text"
+            id="search"
+            type="text"
+            placeholder="Search for user.."
+          />
+          <div>
+            <a class="icon-add-user" href="./html/singnUp.html">
+              <button class="add" id="add">
+                <img
+                  class="iconAdd"
+                  src="https://img.icons8.com/office/30/000000/add-user-group-woman-man.png"
+                />
+              </button>
+            </a>
+          </div>
+
+          <div class="popup" id="popup">
+            <span class="close">close</span>
+            <div class="popup-inner">
+              <span class="closex"> &times;</span>
+              <div class="ineer_inner_div">
+                <h2 id="editH2" class="textPopup">
+                  <em> edit a new contact </em>
+                </h2>
+                <select
+                  class="form-select update-select"
+                  aria-label="Default select example"
+                >
+                  <option selected>update your gender</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Other</option>
+                </select>
+                <div class="div-input-form">
+                  <label class="label-input-form" for="name">name:</label>
+                  <input
+                    id="input-name"
+                    class="form-control"
+                    type="text"
+                    required
+                    placeholder="exemple:Angelina Jolie"
+                  />
+                </div>
+
+                <div class="div-input-form">
+                  <label class="label-input-form" for="phone"
+                    >phone number:</label
+                  >
+                  <input
+                    id="phone"
+                    class="form-control"
+                    type="number"
+                    required
+                    placeholder="exemple:0528031000"
+                  />
+                </div>
+
+                <div class="div-input-form">
+                  <label class="label-input-form" for="name">address:</label>
+                  <input
+                    id="address"
+                    class="form-control"
+                    type="text"
+                    placeholder="exemple:dizengoff 34"
+                  />
+                </div>
+
+                <div class="div-input-form">
+                  <label class="label-input-form" for="name">Email:</label>
+                  <input
+                    id="email"
+                    class="form-control"
+                    type="email"
+                    placeholder="tzali@exemple.com"
+                  />
+                </div>
+
+                <div class="div-sudmit">
+                  <button
+                    type="submit"
+                    class="sudmit btn btn-success"
+                    id="sudmit-edit"
+                  >
+                    edit contact
+                  </button>
+                </div>
+              </div>
+              <div class="alert success-edit" role="alert"></div>
+              <!-- confirm alert -->
+            </div>
+          </div>
+          <!--popup -->
+        </div>
+        <div class="details" id="details"></div>
+        <div class="listEmpty" id="listEmpty"></div>
+
+        <div class="popup" id="popup-info">
+          <span class="close-info">close</span>
+          <div class="popup-inner" id="popup-inner-info">
+            <span class="closex-info"> &times;</span>
+            <div class="info">
+              <p id="img-info"></p>
+              <p class="info-txt" id="name-info">name:</p>
+              <p class="info-txt" id="number-info">number:</p>
+              <p class="info-txt" id="address-info">adreess</p>
+              <p class="info-txt" id="email-info">email:</p>
+              <!--  info -->
+            </div>
+          </div>
+          <!--inner popup-->
+        </div>
+        <!--popup-->
+      </div>
+      <!--  container -->
+    </main>
+    <div class="div-confirm">
+      <div class="inner-confirm container">
+        <div class="div-close">
+          <span class="closex-info close-x-confirm"> &times;</span>
+        </div>
+        <h2 class="h2confirm">Are You Sure</h2>
+        <div class="confirm-buttons">
+          <button type="button" class="btn btn-warning btn-not-confirm">
+            cancel
+          </button>
+          <button type="button" class="btn btn-success btn-confirm">yes</button>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="about-me">
+        <p class="text-justify">
+          My name is
+          <span class="firstName">Bezalel</span
+          ><span class="lastName">Revis.</span>
+          <br>
+          i'm a Full Stack developer i'm available Full-time job,
+          My specialization is in web development,
+          always trying to be better,
+
+        </p>
+      </div>
+      <div class="skills"></div>
+      <div class="connect-me"></div>
+    </footer>
+    <!-- footer -->
+  </body>
+</html>

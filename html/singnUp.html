@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>singnUp</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css//form_select.css" />
+    <script type="module" defer src="../js/newComtect.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="div-head">
+        <h1 class="h1-header">My Professional phone book</h1>
+      </div>
+    </header>
+    <form action="#" class="form-add-contect">
+      <div class="add-container container">
+        <select class="form-select select" aria-label="Default select example">
+          <option selected>Select your gender</option>
+          <option >Female</option>
+          <option >Male</option>
+          <option >Other</option>
+        </select>
+        <label class="label-input-add" for="name">name:</label>
+        <input
+          id="input-name"
+          class="form-control name"
+          type="text"
+          required
+          placeholder="exemple:Angelina Jolie"
+        />
+        <label class="label-input-add" for="name">phone number:</label>
+        <input
+          id="input-name"
+          class="form-control phone"
+          type="number"
+          required
+          placeholder="exemple:0528031000"
+        />
+        <label class="label-input-add" for="adreess">address:</label>
+        <input
+          id="input-name"
+          class="form-control address"
+          type="address"
+          required
+          placeholder="exemple:dizengoff 34"
+        />
+        <label class="label-input-add" for="email">Email:</label>
+        <input
+          id="input-name"
+          class="form-control email"
+          type="email"
+          required
+          placeholder="putin@exemple.com"
+        />
+        <br />
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+          <label class="label-input-add form-label" for="form4Example3"
+            >Describe Yourself:</label
+          >
+          <textarea
+            placeholder="Describe Yourself..."
+            class="form-control textarea"
+            rows="4"
+          >
+          </textarea>
+        </div>
+        <button type="submit" class="sudmit-btn btn btn-success" id="sudmit">
+          Add contact
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
