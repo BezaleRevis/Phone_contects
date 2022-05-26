@@ -149,6 +149,7 @@ try {
     })
     .catch((err) => {
       // case of error couldn't fetch the json data
+      listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
       console.log(err);
     });
 } catch (err) {
