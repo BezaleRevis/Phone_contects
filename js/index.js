@@ -19,7 +19,6 @@ let spanEdit = document.createElement("span"); // creating element for edit bott
 let spanDelete = document.createElement("span"); // creating element for delete botton
 const popupInfo = document.getElementById("popup-info");
 
-
 // gen the inputs varivles for edit contect
 let gender = document.querySelector(".update-select");
 let input_name = document.getElementById("input-name");
@@ -37,8 +36,8 @@ closePopup(btnClosex, popupAddDiv); // handling btn close edit popup with tag "x
 closePopup(btnClose, btnSudmitEdit);
 closePopup(btnClosex, btnSudmitEdit);
 const successMessage = document.querySelector(".success-edit");
-closePopup(btnClose,successMessage);
-closePopup(btnClosex,successMessage);
+closePopup(btnClose, successMessage);
+closePopup(btnClosex, successMessage);
 
 const btnCloseInfo = document.querySelector(".close-info"); // get the buttom close
 const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom close ('x')
@@ -153,5 +152,7 @@ try {
       console.log(err);
     });
 } catch (err) {
+   // case of error couldn't fetch the json data
+   listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
   console.log(err);
 }
