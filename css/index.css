@@ -18,27 +18,28 @@ body {
 }
 
 header {
-  background-color: #708090;
   width: 100%;
+  background-color: rgb(174, 145, 145);
+}
+.div-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em;
 }
 
 .h1-header {
-  /* width: 50%; */
-  /* background-color: #708090; */
   font-size: 1.5em;
   font-family: Georgia, "Times New Roman", Times, serif;
-  padding: 0.8em;
   text-shadow: 2px 2px rgb(192, 71, 71);
+}
+.table{
+  margin-bottom: 0;
 }
 
 .add {
   border: none;
   cursor: pointer;
-  /* font-size: 2em; */
-}
-
-.iconAdd {
-  padding: 0.3em;
 }
 
 main {
@@ -50,18 +51,20 @@ main {
 .container {
   display: flex;
   border-radius: 10px;
-  box-shadow: 0px 0px 5ex lightblue, 0 0 20px;
   background-color: none !important;
   flex-direction: column;
 }
 
 .mainContainer {
   width: 50% !important;
+  padding-right: 0;
+  padding-left:  0;
 }
 
 .search-add {
   margin: 0.2em;
   margin-left: 0;
+  margin-right: 0.1em;
   display: flex;
   /* flex-direction: column; */
   justify-content: space-between;
@@ -246,7 +249,7 @@ label {
   /* padding: 0; */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 611px) {
 
   /* For small screen: */
   header {

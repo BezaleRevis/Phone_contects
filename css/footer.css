@@ -1,8 +1,114 @@
 footer {
-  background: #303033;
-  color: wheat;
+  background: rgb(191, 191, 191);
+  font-family: system-ui;
   width: 100%;
 }
-.footer{
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.about-me{
+  margin-left: 1em;
+}
+
+.skills {
+  text-align: left;
+  margin-left: 3em;
+}
+
+.firstName {
+  font-weight: bold;
+  color: rgb(3, 5, 117);
+}
+
+.lastName {
+  font-weight: bold;
+  color: rgb(3, 5, 117);
+  /* color: rgb(2, 72, 24); */
+}
+
+.skills-catgories {
+  margin: 0 auto;
+}
+
+.pFooter {
+  margin-bottom: 0;
+}
+.connect-me{
+  text-align: left;
+}
+.connect-details{
   display: flex;
+  margin-bottom: 1.5em;
+  justify-content: space-between;
+}
+.pConnect{
+  text-align: left;
+  margin-right: 3em;
+  border: 2px red;
+}
+.social-madia {
+  display: flex;
+  gap: 1em;
+  font-size: 1.89em;
+}
+
+.facebook {
+  border: 10px;
+  /* color: #3b5998; */
+  cursor: pointer;
+}
+.instagram {
+  cursor: pointer;
+  color: rgb(199, 56, 104);
+}
+.instagram:hover {
+  color: rgb(177, 17, 70);
+}
+.twitter {
+  color: #1668a7;
+  cursor: pointer;
+}
+.twitter:hover {
+  color: #002d50;
+}
+.github {
+  cursor: pointer;
+  color: gold;
+}
+.whatsapp {
+  color: green;
+  cursor: pointer;
+}
+.whatsapp:hover {
+  color: rgb(2, 77, 2);
+  cursor: pointer;
+}
+.linkedin{
+  color: rgb(29, 26, 26);
+  cursor: pointer;
+}
+.linkedin:hover{
+  color: rgb(6, 4, 4);
+}
+@media (max-width: 613px){
+  .footer {
+    display: grid;
+    grid-template-columns: none;
+  }
+  .skills {
+    text-align: left;
+    margin-left: 0em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-top: dashed gray;
+    border-bottom: dashed gray;
+  }
+  .skills-div{
+    margin-left: 0.5em;
+  }
+  .connect-me{
+    margin-left: 1em;
+  }
 }
