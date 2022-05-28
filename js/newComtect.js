@@ -3,7 +3,8 @@ const btnAdd = document.querySelector(".sudmit-btn"); // gett the buttom add con
 // sudmit form button
 let btnSudmit = document.querySelector(".sudmit-btn");
 
-btnSudmit.addEventListener("click", () => {
+btnSudmit.addEventListener("click", (e) => {
+  e.preventDefault;
   // varibles from form add contect to insert it to the phone contect
   let gender = document.querySelector(".select");
   let name = document.querySelector(".name");
