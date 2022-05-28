@@ -211,6 +211,7 @@ label {
   align-items: center;
   position: fixed;
   top: 0;
+  color: black;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -220,7 +221,6 @@ label {
 .confirm-buttons {
   display: flex;
   justify-content: flex-end;
-  /* margin: 1em; */
   margin-bottom: 0.3em;
 }
 

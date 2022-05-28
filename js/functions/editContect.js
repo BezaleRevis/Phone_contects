@@ -26,6 +26,7 @@ function updateContect(gender, name, phoneNum, address, email, id) {
     };
     const btnConfirm = document.querySelector(".btn-confirm");
     const btnNotConfirm = document.querySelector(".btn-not-confirm");
+    const successMessage = document.querySelector(".success-edit");
     btnConfirm.addEventListener("click", () => {
       try {
         fetch(`http://localhost:4000/phone_contects/${id}`, {
@@ -38,14 +39,16 @@ function updateContect(gender, name, phoneNum, address, email, id) {
           .then((response) => {
             response.json();
             const status = response.status;
-            // console.log(response);
-            console.log(status);
-            if(status === 200){
-              const successMessage = document.querySelector(".success-edit");
+            if (status === 200) {
               successMessage.className = "alert-success";
               successMessage.style.visibility = "visible";
-              successMessage.innerHTML = 
+              successMessage.innerHTML =
                 "You have successfully edited this contact";
+            } else {
+              successMessage.className = "alert-danger";
+              successMessage.style.visibility = "visible";
+              successMessage.innerHTML =
+                "for some reason we couldnt edit this contect please try again later...";
             }
           })
           .then((data) => {
@@ -53,9 +56,17 @@ function updateContect(gender, name, phoneNum, address, email, id) {
           })
           .catch((error) => {
             console.error("Error:", error);
+            successMessage.className = "alert-danger";
+            successMessage.style.visibility = "visible";
+            successMessage.innerHTML =
+              "for some reason we couldnt edit this contect please try again later...";
           });
       } catch (err) {
         console.log(err);
+        successMessage.className = "alert-danger";
+        successMessage.style.visibility = "visible";
+        successMessage.innerHTML =
+          "for some reason we couldnt edit this contect please try again later...";
       }
       confirmDiv.style.visibility = "hidden"; // close the alert after he confirmed to delete
     });

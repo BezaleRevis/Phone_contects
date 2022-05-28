@@ -97,6 +97,9 @@ footer {
     display: grid;
     grid-template-columns: none;
   }
+  .about-me{
+    margin-right: 0.8em;
+  }
   .skills {
     text-align: left;
     margin-left: 0em;
@@ -110,5 +113,8 @@ footer {
   }
   .connect-me{
     margin-left: 1em;
+  }
+  .social-madia{
+    margin-right: 0.1em;
   }
 }
