@@ -40,7 +40,9 @@ btnSudmit.addEventListener("click", (e) => {
         const status = response.status;
         console.log(status);
         if (status === 200) {
-          successMessage.className = "alert-success";
+          if (successMessage.className !== "alert-success") {
+            successMessage.className = "alert-success";
+          }
           successMessage.style.visibility = "visible";
           successMessage.innerHTML =
             "You have successfully added a new contact";
@@ -56,7 +58,9 @@ btnSudmit.addEventListener("click", (e) => {
       })
       .catch((error) => {
         console.error("Error:", error);
-        successMessage.className = "alert-danger";
+        if (successMessage.className !== "alert-danger") {
+          successMessage.className = "alert-danger";
+        }
         successMessage.style.visibility = "visible";
         successMessage.innerHTML =
           "for some reason we couldnt add this contect please try again later...";
@@ -64,7 +68,9 @@ btnSudmit.addEventListener("click", (e) => {
   } catch (err) {
     console.log(err);
     console.error("Error:", error);
-    successMessage.className = "alert-danger";
+    if (successMessage.className !== "alert-danger") {
+      successMessage.className = "alert-danger";
+    }
     successMessage.style.visibility = "visible";
     successMessage.innerHTML =
       "for some reason we couldnt add this contect please try again later...";
