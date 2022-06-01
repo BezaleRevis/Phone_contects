@@ -44,7 +44,7 @@ const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom 
 closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close"
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
 try {
-  fetch("http://ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects", {
+  fetch("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects", {
     method: "GET",
     mode: "cors",
     headers: {
