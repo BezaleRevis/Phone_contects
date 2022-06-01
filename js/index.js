@@ -43,16 +43,20 @@ const btnCloseInfo = document.querySelector(".close-info"); // get the buttom cl
 const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom close ('x')
 closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close"
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
-
 try {
   fetch("http://ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects", {
     method: "GET",
     mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
   })
     .then((res) => {
       if (res.ok) {
+        console.log(res);
         return res.json();
       } else {
+        console.log(res);
         listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
         throw Error("Erroo we couldn't fetch the data");
       }
