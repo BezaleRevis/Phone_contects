@@ -45,7 +45,7 @@ closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
 try {
   const api = await axios
-    .get("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects")
+    .get("http://ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects")
     // .then((data) => {
     //   console.log(data);
     // })
