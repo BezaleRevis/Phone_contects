@@ -43,16 +43,22 @@ const btnCloseInfo = document.querySelector(".close-info"); // get the buttom cl
 const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom close ('x')
 closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close"
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
+if (location.protocol !== "http:") {
+  location.replace(
+    `http:${location.href.substring(location.protocol.length)}`
+  );
+}
 try {
-  const api = await axios
-    .get("http://ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects")
-    // .then((data) => {
-    //   console.log(data);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
-    console.log(api.data);
+  const url =
+    "//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects";
+  const api = await axios.get(url);
+  // .then((data) => {
+  //   console.log(data);
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // });
+  console.log(api.data);
 } catch (err) {
   console.log(err);
 }
