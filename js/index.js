@@ -43,6 +43,8 @@ const btnCloseInfo = document.querySelector(".close-info"); // get the buttom cl
 const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom close ('x')
 closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close"
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
+const api = await axios.get("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects")
+console.log(api.data);
 try {
   fetch("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects", {
     method: "GET",
