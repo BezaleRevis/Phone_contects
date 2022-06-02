@@ -43,8 +43,19 @@ const btnCloseInfo = document.querySelector(".close-info"); // get the buttom cl
 const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom close ('x')
 closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close"
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
-const api = await axios.get("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects")
-console.log(api.data);
+try {
+  const api = await axios
+    .get("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects")
+    .then(() => {
+      console.log(api.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+} catch (err) {
+  console.log(err);
+}
+
 try {
   fetch("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects", {
     method: "GET",
@@ -158,7 +169,7 @@ try {
       console.log(err);
     });
 } catch (err) {
-   // case of error couldn't fetch the json data
-   listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
+  // case of error couldn't fetch the json data
+  listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
   console.log(err);
 }
