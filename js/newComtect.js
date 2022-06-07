@@ -28,7 +28,7 @@ btnSudmit.addEventListener("click", (e) => {
   };
   const successMessage = document.querySelector(".success-edit");
   try {
-    fetch("http://localhost:4000/phone_contects", {
+    fetch("https://server-phone-contect.herokuapp.com/phone_contects", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",

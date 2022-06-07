@@ -29,7 +29,7 @@ function updateContect(gender, name, phoneNum, address, email, id) {
     const successMessage = document.querySelector(".success-edit");
     btnConfirm.addEventListener("click", () => {
       try {
-        fetch(`http://localhost:4000/phone_contects/${id}`, {
+        fetch(`https://server-phone-contect.herokuapp.com/phone_contects/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

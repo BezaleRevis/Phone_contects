@@ -14,7 +14,7 @@ export const deleteContect = function (id, spanDelete) {
         btnConfirm.addEventListener("click", () => {
           try {
             const deleteData = async () => {
-              const urlDelete = `http://localhost:4000/phone_contects/${id}`;
+              const urlDelete = `https://server-phone-contect.herokuapp.com/phone_contects/${id}`;
               const response = await fetch(urlDelete, {
                 method: "DELETE",
                 headers: {

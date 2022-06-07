@@ -44,16 +44,7 @@ const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom 
 closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close"
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
 try {
-  const url =
-    "//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects";
-  console.log(url);
-  const api = await axios.get(url);
-  console.log(api.data);
-} catch (err) {
-  console.log(err);
-}
-try {
-  fetch("//ec2-18-234-170-231.compute-1.amazonaws.com:5000/phone_contects", {
+  fetch("https://server-phone-contect.herokuapp.com/phone_contects", {
     method: "GET",
     mode: "cors",
     headers: {
