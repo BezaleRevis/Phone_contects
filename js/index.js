@@ -43,6 +43,18 @@ const btnCloseInfo = document.querySelector(".close-info"); // get the buttom cl
 const btnClosexInfo = document.querySelector(".closex-info"); // get the buttom close ('x')
 closePopup(btnCloseInfo, popupInfo); // handling btn close info with text "close"
 closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
+let isLoading = true;
+if (isLoading) {
+  listEmpty.innerHTML = `<div class="loading">
+  <p class="loadingP">l</p>
+  <p class="loadingP">o</p>
+  <p class="loadingP">a</p>
+  <p class="loadingP">d</p>
+  <p class="loadingP">i</p>
+  <p class="loadingP">n</p>
+  <p class="loadingP">g</p>
+  </div>`;
+}
 try {
   fetch("https://server-phone-contect.herokuapp.com/phone_contects", {
     method: "GET",
@@ -53,6 +65,8 @@ try {
   })
     .then((res) => {
       if (res.ok) {
+        isLoading = false;
+        console.log(isLoading);
         console.log(res);
         return res.json();
       } else {
