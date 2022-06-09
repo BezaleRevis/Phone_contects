@@ -55,6 +55,8 @@ if (isLoading) {
   <p class="loadingP">g</p>
   </div>`;
 }
+let loading = document.querySelector(".loading");
+loading.style.display = "flex"; // in the begigning when data i still loading
 try {
   fetch("https://server-phone-contect.herokuapp.com/phone_contects", {
     method: "GET",
@@ -66,6 +68,7 @@ try {
     .then((res) => {
       if (res.ok) {
         isLoading = false;
+        loading.style.display = "none"; // data is not loading any more
         return res.json();
       } else {
         isLoading = false;
@@ -75,6 +78,7 @@ try {
     })
     .then((data) => {
       isLoading = false;
+      loading.style.display = "none"; // data is not loading any more
       console.log(data);
       if (data === undefined) {
         isLoading = false;
@@ -121,7 +125,6 @@ try {
             popupInfo.style.visibility = "visible";
           });
           deleteContect(id, spanDelete); // call function to delete contect
-
           spanEdit.addEventListener("click", (e) => {
             // handeling onClick on the edit icon
             popupAddDiv.style.visibility = "visible";
@@ -149,6 +152,7 @@ try {
         });
       } else {
         isLoading = false;
+        loading.style.display = "none"; // data is not loading any more
         // if(the list is empty){im printing for the user a messege that the list is empty}
         listEmpty.innerHTML = `<div >
         <h2><em>list is empty be the first one to add a new contect</em></h2>
@@ -167,12 +171,14 @@ try {
     })
     .catch((err) => {
       isLoading = false;
+      loading.style.display = "none"; // data is not loading any more
       // case of error couldn't fetch the json data
       listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
       console.log(err);
     });
 } catch (err) {
   isLoading = false;
+  loading.style.display = "none"; // data is not loading any more
   // case of error couldn't fetch the json data
   listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
   console.log(err);

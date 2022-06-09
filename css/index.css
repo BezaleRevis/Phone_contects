@@ -126,7 +126,6 @@ main {
   justify-content: space-between;
   align-items: center;
   border: solid 2px rgb(180, 153, 153);
-  /* padding: 0.2em 0.2em 0.2em 0; */
 }
 
 .td:hover {
@@ -205,8 +204,6 @@ label {
 .update-select {
   padding: 0.3em;
   width: 100%;
-  border-radius: 10px;
-  /* margin-top: 0.2em; */
 }
 
 .div-confirm {
@@ -256,10 +253,10 @@ label {
 .success-edit {
   /* stylyng the text if edit text secseded */
   visibility: hidden;
-  /* padding: 0; */
 }
 
 .loading {
+  display: none;
   text-align: center;
 }
 
