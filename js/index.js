@@ -66,18 +66,18 @@ try {
     .then((res) => {
       if (res.ok) {
         isLoading = false;
-        console.log(isLoading);
-        console.log(res);
         return res.json();
       } else {
-        console.log(res);
+        isLoading = false;
         listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
         throw Error("Erroo we couldn't fetch the data");
       }
     })
     .then((data) => {
+      isLoading = false;
       console.log(data);
       if (data === undefined) {
+        isLoading = false;
         listEmpty.innerHTML = `loading data please wait or reload page...`;
       } else if (data !== undefined && data.length > 0) {
         // list is not empty
@@ -148,6 +148,7 @@ try {
           showInfo(element, spanInfo); // call func to show info spesifig user
         });
       } else {
+        isLoading = false;
         // if(the list is empty){im printing for the user a messege that the list is empty}
         listEmpty.innerHTML = `<div >
         <h2><em>list is empty be the first one to add a new contect</em></h2>
@@ -165,11 +166,13 @@ try {
       }
     })
     .catch((err) => {
+      isLoading = false;
       // case of error couldn't fetch the json data
       listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
       console.log(err);
     });
 } catch (err) {
+  isLoading = false;
   // case of error couldn't fetch the json data
   listEmpty.innerHTML = `<em>Sorry somthing went wrong we could't fetch the data...</em>`;
   console.log(err);
