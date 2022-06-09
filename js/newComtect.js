@@ -4,7 +4,17 @@ const btnAdd = document.querySelector(".sudmit-btn"); // gett the buttom add con
 let btnSudmit = document.querySelector(".sudmit-btn");
 
 btnSudmit.addEventListener("click", (e) => {
+  const successMessage = document.querySelector(".success-edit");
   e.preventDefault();
+  let isLoading = true;
+  if(isLoading){
+    if (successMessage.className !== "alert-success") {
+      successMessage.className = "alert-success";
+    }
+    successMessage.style.visibility = "visible";
+    successMessage.innerHTML =
+      "please wait while we adding your contect...";
+  }
   // varibles from form add contect to insert it to the phone contect
   let gender = document.querySelector(".select");
   let name = document.querySelector(".name");
@@ -26,9 +36,11 @@ btnSudmit.addEventListener("click", (e) => {
     email: email.value,
     description: description.value,
   };
-  const successMessage = document.querySelector(".success-edit");
+
   try {
-    fetch("https://server-phone-contect.herokuapp.com/phone_contects", {
+
+    const url = "https://server-phone-contect.herokuapp.com/phone_contects"
+    fetch(url, {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
