@@ -121,10 +121,10 @@ try {
           divTDEdit[i].appendChild(spanEdit);
           divTD[i].appendChild(spanP);
           onClickVisible(spanEdit, popupAddDiv); // call func on click edit to open popup info
-          spanInfo.addEventListener("click", (e) => {
-            popupInfo.style.visibility = "visible";
+          spanDelete.addEventListener("click", () => {
+            // handeling click on the icon delete
+            deleteContect(id); //call func to deldte this id contect
           });
-          deleteContect(id, spanDelete); // call function to delete contect
           spanEdit.addEventListener("click", (e) => {
             // handeling onClick on the edit icon
             popupAddDiv.style.visibility = "visible";
@@ -141,14 +141,18 @@ try {
               input_address,
               input_email,
               id
-            );
-          }); // call func to update contect
+            ); // call func to update contect
+          }); 
           //taking the id from the input element search
           var search = document.getElementById("search");
           //taking all td from the table to know what td to show when user searching spesipifig user
           let allTd = document.querySelectorAll(".td");
           searchPecificUser(search, allTd); // call func handeling the serch if user loocking for a spesifig contact
-          showInfo(element, spanInfo); // call func to show info spesifig user
+          spanInfo.addEventListener("click", () => {
+            // handling value which will show the screen user when i click on the info icon
+            popupInfo.style.visibility = "visible";
+            showInfo(element); // call func to show info spesifig user
+          });
         });
       } else {
         isLoading = false;
