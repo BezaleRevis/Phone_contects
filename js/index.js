@@ -142,7 +142,7 @@ try {
               input_email,
               id
             ); // call func to update contect
-          }); 
+          });
           //taking the id from the input element search
           var search = document.getElementById("search");
           //taking all td from the table to know what td to show when user searching spesipifig user
