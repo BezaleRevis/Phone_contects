@@ -46,17 +46,17 @@ closePopup(btnClosexInfo, popupInfo); // handling btn close with tag "x"
 let isLoading = true;
 if (isLoading) {
   listEmpty.innerHTML = `<div class="loading">
-  <p class="loadingP">l</p>
-  <p class="loadingP">o</p>
-  <p class="loadingP">a</p>
-  <p class="loadingP">d</p>
-  <p class="loadingP">i</p>
-  <p class="loadingP">n</p>
-  <p class="loadingP">g</p>
+    <p class="loadingP">l</p>
+    <p class="loadingP">o</p>
+    <p class="loadingP">a</p>
+    <p class="loadingP">d</p>
+    <p class="loadingP">i</p>
+    <p class="loadingP">n</p>
+    <p class="loadingP">g</p>
   </div>`;
 }
 let loading = document.querySelector(".loading");
-loading.style.display = "flex"; // in the begigning when data i still loading
+loading.style.display = "flex"; // in the begigning when data is null i still loading
 try {
   fetch("https://server-phone-contect.herokuapp.com/phone_contects", {
     method: "GET",
@@ -155,22 +155,16 @@ try {
           });
         });
       } else {
+        // list empty
         isLoading = false;
         loading.style.display = "none"; // data is not loading any more
         // if(the list is empty){im printing for the user a messege that the list is empty}
-        listEmpty.innerHTML = `<div >
-        <h2><em>list is empty be the first one to add a new contect</em></h2>
-        <a
-        class="icon-add-user"
-         href="./html/singnUp.html">
-          <button class="add" id="add">
-            <img
-              class="iconAdd"
-              src="https://img.icons8.com/office/30/000000/add-user-group-woman-man.png"
-            />
-          </button>
-        </a>
-      </div>`;
+        let adding_contect =
+          document.querySelector(".adding-contect").innerHTML;
+        listEmpty.innerHTML = `<div>
+            <h2><em>List is empty be the first one to add a new contect</em></h2>
+            ${adding_contect}
+        </div>`;
       }
     })
     .catch((err) => {
